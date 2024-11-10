@@ -1,0 +1,90 @@
+/* Improved Homepage Styles */
+
+.homepage {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/path/to/hero-image.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 150px 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hero h2 {
+    font-size: 52px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .hero p {
+    font-size: 24px;
+    margin-bottom: 35px;
+  }
+  
+  .hero .hero-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .hero .hero-button:hover {
+    background-color: #e65c50;
+  }
+  
+  .popular-books {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .popular-books h3 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 50px;
+    color: #333;
+  }
+  
+  .book-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .hero h2 {
+      font-size: 36px;
+    }
+  
+    .hero p {
+      font-size: 18px;
+    }
+  
+    .popular-books h3 {
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      padding: 100px 20px;
+    }
+  
+    .hero h2 {
+      font-size: 28px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  }
+  
