@@ -1,0 +1,38 @@
+/* src/pages/MyLibrary.css */
+
+.my-library-container {
+    padding: 20px;
+  }
+  
+  .my-library-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .book-item {
+    width: 150px;
+    text-align: center;
+  }
+  
+  .book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .book-item h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+  }
+  
+  .book-item p {
+    font-size: 14px;
+    color: #555;
+  }

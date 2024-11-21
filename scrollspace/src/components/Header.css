@@ -101,4 +101,14 @@
       font-size: 14px;
     }
   }
+  .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .profile-section button {
+    padding: 5px 10px;
+    cursor: pointer;
+  }
   
