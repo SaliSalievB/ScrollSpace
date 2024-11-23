@@ -1,13 +1,15 @@
 /* src/pages/BookList.css */
+
 .book-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 16px;
-    box-sizing: border-box;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
   
   .book-list .book-card {
     margin: 16px;

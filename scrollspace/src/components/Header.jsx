@@ -2,10 +2,12 @@
 import React from 'react';
 import './Header.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { CartContext } from '../components/CartContext';
 
 function Header() {
   const navigate = useNavigate();
   const isAuthenticated = !!localStorage.getItem('token');
+  const { cart } = React.useContext(CartContext);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -19,15 +21,20 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <li><Link to="/genres">Genres</Link></li>
-          <li><Link to="/new-releases">New Releases</Link></li>
-          <li><Link to="/bestsellers">Bestsellers</Link></li>
+          <li><Link to="/?category=new-releases">New Releases</Link></li>
+          <li><Link to="/?category=bestsellers">Bestsellers</Link></li>
           {isAuthenticated && <li><Link to="/my-library">My Library</Link></li>}
-         
+          {isAuthenticated && <li><Link to="/upload">Upload</Link></li>}
         </ul>
       </nav>
-      <div className="search-cart-profile">
-        <input type="text" placeholder="Search..." />
+        <div className="cart-icon">
+          <Link to="/cart">
+            🛒
+            {cart?.cartItems.length > 0 && (
+              <span className="cart-count">{cart.cartItems.length}</span>
+            )}
+          </Link>
+        </div>
         <div className="profile-section">
           {isAuthenticated ? (
             <>
@@ -40,7 +47,6 @@ function Header() {
             </>
           )}
         </div>
-      </div>
     </header>
   );
 }

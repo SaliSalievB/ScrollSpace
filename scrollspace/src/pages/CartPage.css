@@ -5,6 +5,7 @@
     padding: 16px;
     background-color: #fff;
     box-sizing: border-box;
+    color: #666;
   }
   
   .cart-page h2 {
@@ -55,5 +56,9 @@
   
   .cart-page button:hover {
     background-color: #c82333;
+  }
+
+  .payment{
+    background-color: darkgreen !important;
   }
   

@@ -78,4 +78,37 @@
       gap: 15px;
     }
   }
+  .footer .status {
+    color: green;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .footer .status.error {
+    color: red;
+  }
+  .footer .footer-button {
+    background: none;
+    border: none;
+    color: #007BFF;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 1em;
+    padding: 0;
+  }
+  
+  .footer .footer-button:hover {
+    color: #0056b3;
+    text-decoration: none;
+  }
+  
+  .footer .status {
+    color: green;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  .footer .status.error {
+    color: red;
+  }
   

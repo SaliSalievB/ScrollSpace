@@ -9,6 +9,7 @@ import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import MyLibrary from './pages/MyLibrary'; 
 import CartPage from './pages/CartPage';
+import UploadPage from './pages/UploadPage';
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
         <Route
         path="/my-library"
         element={<ProtectedRoute element={<MyLibrary />} />}
+        
+      />
+      <Route
+        path="/upload"
+        element={<ProtectedRoute element={<UploadPage />} />}
         
       />
       </Routes>

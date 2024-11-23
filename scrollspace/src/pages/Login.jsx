@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useState } from 'react';
 import axios from '../axiosConfig';
 import { useNavigate, Link } from 'react-router-dom';
@@ -17,17 +16,24 @@ function Login() {
       username,
       password,
     })
-    .then((response) => {
-      // Save the token to localStorage
-      localStorage.setItem('token', response.data.token);
-      // Optionally, save user info
-      // Redirect to home page or wherever you like
-      navigate('/');
-    })
-    .catch((error) => {
-      console.error('Login error:', error);
-      setError('Invalid username or password');
-    });
+      .then((response) => {
+        // Save the token and user role to localStorage
+        const { token, roles } = response.data;
+        const role = roles.length === 0 ?'':roles [0]
+        localStorage.setItem('token', token);
+        localStorage.setItem('role', role ); // Save the user's role
+
+        // Redirect to home page or role-specific page
+        if (role === 'Admin') {
+          navigate('/');
+        } else {
+          navigate('/');
+        }
+      })
+      .catch((error) => {
+        console.error('Login error:', error);
+        setError('Invalid username or password');
+      });
   };
 
   return (

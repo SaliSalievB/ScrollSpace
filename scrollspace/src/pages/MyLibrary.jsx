@@ -1,7 +1,6 @@
-// src/pages/MyLibrary.js
 import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
-import './MyLibrary.css'; // Create this CSS file for styling
+import './MyLibrary.css';
 
 function MyLibrary() {
   const [books, setBooks] = useState([]);
@@ -9,8 +8,8 @@ function MyLibrary() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch the user's library from the backend
-    axios.get('/users/my-library')
+    // Fetch the user's purchased books from the backend
+    axios.get('/Order')
       .then((response) => {
         setBooks(response.data);
         setLoading(false);
@@ -38,12 +37,14 @@ function MyLibrary() {
       ) : (
         <div className="book-list">
           {books.map((book) => (
-            <div key={book.id} className="book-item">
-              {/* Replace with your BookCard component if you have one */}
-              <img src={book.coverImageUrl} alt={book.title} />
-              <h3>{book.title}</h3>
-              <p>{book.author}</p>
-              {/* Additional book details */}
+            <div key={book.orderId} className="book-item">
+              <img src={book.coverImageUrl} alt={book.title} className="book-cover" />
+              <div className="book-details">
+                <h3>{book.title}</h3>
+                <p>Author: {book.author}</p>
+                <p>Price: ${book.price.toFixed(2)}</p>
+                <p>Purchased on: {new Date(book.orderDate).toLocaleDateString()}</p>
+              </div>
             </div>
           ))}
         </div>

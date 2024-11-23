@@ -1,71 +1,106 @@
-/* Improved Book Card Styles */
-
+/* Improved BookCard Styles */
 .book-card {
-    background-color: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    width: 220px;
-    padding: 15px;
-    text-align: left;
-    transition: transform 0.3s;
-  }
-  
-  .book-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .book-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .book-card h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .book-card p {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  .book-card .price {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ff6f61;
-    margin-top: 10px;
-  }
-  
-  .book-card .buy-button {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+  margin: 16px auto;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.book-card img {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.book-card h4 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.book-card p {
+  font-size: 0.9em;
+  color: #777;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.book-card .price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ff6f61;
+  margin: 15px 0;
+}
+
+.book-card button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.book-card button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.book-card .reject-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #d5090c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.book-card .reject-button:hover {
+  background-color: #d9363e;
+}
+
+@media (min-width: 600px) {
+  .book-card {
+    width: calc(48% - 16px);
     display: inline-block;
-    padding: 10px 15px;
-    background-color: #ff6f61;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-top: 15px;
-    transition: background-color 0.3s;
+    vertical-align: top;
   }
-  
-  .book-card .buy-button:hover {
-    background-color: #e65c50;
+}
+
+@media (min-width: 900px) {
+  .book-card {
+    width: calc(31% - 16px);
   }
-  
-  @media (max-width: 768px) {
-    .book-card {
-      width: 45%;
-      margin-bottom: 20px;
-    }
+}
+
+@media (max-width: 599px) {
+  .book-card img {
+    max-height: 150px;
   }
-  
-  @media (max-width: 480px) {
-    .book-card {
-      width: 100%;
-    }
+
+  .book-card h4 {
+    font-size: 1.2em;
   }
-  
+}
