@@ -23,7 +23,7 @@ function Header() {
           <li><Link to="/new-releases">New Releases</Link></li>
           <li><Link to="/bestsellers">Bestsellers</Link></li>
           {isAuthenticated && <li><Link to="/my-library">My Library</Link></li>}
-          <li><Link to="/cart">Cart</Link></li>
+         
         </ul>
       </nav>
       <div className="search-cart-profile">

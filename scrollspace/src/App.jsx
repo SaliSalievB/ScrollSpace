@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import ProtectedRoute from './components/ProtectedRoute';
 import MyLibrary from './pages/MyLibrary'; 
+import CartPage from './pages/CartPage';
 
 function App() {
   return (
@@ -17,9 +18,12 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<CartPage />} />
+
         <Route
         path="/my-library"
         element={<ProtectedRoute element={<MyLibrary />} />}
+        
       />
       </Routes>
       <Footer />

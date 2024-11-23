@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePage.css';
-import BookCard from '../components/BookCard';
+import BookList from './BookList';
 
 function HomePage() {
   return (
@@ -12,12 +12,7 @@ function HomePage() {
       </section>
       <section className="popular-books">
         <h3>Popular Books</h3>
-        <div className="book-list">
-          {/* Add book cards with data */}
-          <BookCard title="Dystopian Masterpiece" description="A story of surveillance and totalitarianism." />
-          <BookCard title="Classic Novel" description="A tale of love, class, and social issues." />
-          <BookCard title="Epic Adventure" description="A journey of dragons, dwarves, and a hobbit." />
-        </div>
+        <BookList />
       </section>
     </div>
   );
