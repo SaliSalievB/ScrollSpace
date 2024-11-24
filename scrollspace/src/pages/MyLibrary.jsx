@@ -1,3 +1,5 @@
+// src/components/MyLibrary.js
+
 import React, { useEffect, useState } from 'react';
 import axios from '../axiosConfig';
 import './MyLibrary.css';
@@ -8,9 +10,9 @@ function MyLibrary() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Fetch the user's purchased books from the backend
-    axios.get('/Order')
+    axios.get('/Cart/UserLibrary')
       .then((response) => {
+        console.log('API Response:', response.data);
         setBooks(response.data);
         setLoading(false);
       })
@@ -20,6 +22,27 @@ function MyLibrary() {
         setLoading(false);
       });
   }, []);
+
+  const handleDownload = async (bookId, title) => {
+    try {
+      console.log('Downloading book:', title);
+
+      const response = await axios.get(`/Cart/Download/${bookId}`, {
+        responseType: 'blob', // Important to specify the response type as blob
+      });
+
+      const blob = new Blob([response.data], { type: response.headers['content-type'] });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `${title}.pdf`; // Use the book title for the filename
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Download failed:', error);
+      alert('Download failed. Please try again.');
+    }
+  };
 
   if (loading) {
     return <p>Loading your library...</p>;
@@ -44,6 +67,12 @@ function MyLibrary() {
                 <p>Author: {book.author}</p>
                 <p>Price: ${book.price.toFixed(2)}</p>
                 <p>Purchased on: {new Date(book.orderDate).toLocaleDateString()}</p>
+                <button
+                  onClick={() => handleDownload(book.bookId, book.title)}
+                  className="download-button"
+                >
+                  Download
+                </button>
               </div>
             </div>
           ))}

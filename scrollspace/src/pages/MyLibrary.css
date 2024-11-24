@@ -77,3 +77,22 @@
   h2{
     color: aliceblue !important;
   }
+  .download-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.download-button:hover {
+    background-color: #45a049;
+}
+
+.download-button:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
