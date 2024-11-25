@@ -38,7 +38,7 @@ function Header() {
         <div className="profile-section">
           {isAuthenticated ? (
             <>
-              <span className="profile-icon">👤</span>
+              
               <button onClick={handleLogout}>Logout</button>
             </>
           ) : (
